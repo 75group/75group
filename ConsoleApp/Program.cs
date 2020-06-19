@@ -6,7 +6,10 @@ namespace ConsoleApp
     {
         static void EvenSum()
         {
-
+            int sum = 0;
+            int x;
+            for (x = 0; x <= n; x += 2)
+                sum += x;
         }
         static void Main()
         {
