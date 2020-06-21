@@ -6,7 +6,7 @@ namespace ConsoleApp
     {
         static void Main()
         {
-            Gapfull();
+            //Gapfull();
         }
         /// <summary>
         /// print gapful numbers to console from range 100 to 999
