@@ -6,7 +6,7 @@ namespace ConsoleApp
     {
         static void Main()
         {
-
+            EvenSum();
         }
         /// <summary>
         /// print gapful numbers to console from range 100 to 999
@@ -46,14 +46,13 @@ namespace ConsoleApp
             bool isCorrectFormatNumber;
             do
             {
+                Console.WriteLine("We greet you! In order to calculate the sum of even numbers, enter a number:");
                 try
                 {
+                    int inputNumber = Convert.ToInt32(Console.ReadLine());
                     isCorrectFormatNumber = true;
                     int summ = 0;
-                    int inputNumber;
-
-                    Console.WriteLine("We greet you! In order to calculate the sum of even numbers, enter a number:");
-                    inputNumber = Convert.ToInt32(Console.ReadLine());
+                    
                     for (int i = 0; i <= inputNumber; i++)
                     {
                         if (i % 2 == 0)
@@ -61,12 +60,11 @@ namespace ConsoleApp
                             summ += i;
                         }
                     }
-                    Console.WriteLine($"the sum of all even numbers is: {summ}");
+                    Console.WriteLine($"The sum of all even numbers is: {summ}");
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.Message);
-                    Console.WriteLine();
+                    Console.WriteLine(e.Message + "\n");
                     isCorrectFormatNumber = false;
                 }
             }
