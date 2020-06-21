@@ -6,7 +6,7 @@ namespace ConsoleApp
     {
         static void Main()
         {
-            Console.WriteLine("75group");
+
         }
     }
 }
