@@ -70,6 +70,9 @@ namespace ConsoleApp
             }
             while (!isCorrectFormatNumber);
         }
+        /// <summary>
+        /// print to console prime numbers and sum of prime numbers between one and entered number;
+        /// </summary>
         public static void PrimeSum()
         {
             bool isValid = false;
@@ -98,7 +101,7 @@ namespace ConsoleApp
                         }
                     }
                     isValid = true;
-                    Console.WriteLine($"Sum of prime numbers beteen 1 and {inputNumber} equals {sum}");
+                    Console.WriteLine($"Sum of prime numbers between 1 and {inputNumber} equals {sum}");
                 }
                 catch (Exception e)
                 {
