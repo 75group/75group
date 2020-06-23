@@ -60,10 +60,15 @@ namespace ConsoleApp
             }
             else return false;
         }
+        static void Cheers()
+        {
+            Console.WriteLine();
+        }
         static void Main()
         {
             //EvenSum();
-            PrimeSum();
+            //PrimeSum();
+            Cheers();
             Console.WriteLine("75group");
         }
     }
