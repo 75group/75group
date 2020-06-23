@@ -6,7 +6,7 @@ namespace ConsoleApp
     {
         static void Main()
         {
-            EvenSum();
+            PrimeSum();
         }
         /// <summary>
         /// print gapful numbers to console from range 100 to 999
@@ -69,6 +69,46 @@ namespace ConsoleApp
                 }
             }
             while (!isCorrectFormatNumber);
+        }
+        /// <summary>
+        /// print to console prime numbers and sum of prime numbers between one and entered number;
+        /// </summary>
+        public static void PrimeSum()
+        {
+            bool isValid = false;
+            int sum = 0;
+            int divCount = 0;
+            while (!isValid)
+            {
+                try
+                {
+                    Console.Write("Enter number: ");
+                    int inputNumber = Int32.Parse(Console.ReadLine());
+                    for (int i = 1; i < inputNumber; i++)
+                    {
+                        divCount = 0;
+                        for (int j = 1; j < inputNumber; j++)
+                        {
+                            if(i % j == 0)
+                            {
+                                divCount++;
+                            }
+                        }
+                        if (divCount == 2)
+                        {
+                            Console.WriteLine(i + "\t- is prime number!");
+                            sum += i;
+                        }
+                    }
+                    isValid = true;
+                    Console.WriteLine($"Sum of prime numbers between 1 and {inputNumber} equals {sum}");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    isValid = false;
+                }
+            }
         }
     }
 }
