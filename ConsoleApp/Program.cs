@@ -84,11 +84,16 @@ namespace ConsoleApp
             }
 
         }
+        static void Fibbonacci()
+        {
+            Console.WriteLine();
+        }
         static void Main()
         {
             //EvenSum();
             //PrimeSum();
-            Cheers();
+            //Cheers();
+            Fibbonacci();
             Console.ReadKey();
         }
     }
