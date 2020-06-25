@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace ConsoleApp
 {
@@ -6,7 +9,8 @@ namespace ConsoleApp
     {
         static void Main()
         {
-            PrimeSum();
+            PasswordValidation();
+            Console.ReadKey();
         }
         /// <summary>
         /// print gapful numbers to console from range 100 to 999
@@ -109,6 +113,75 @@ namespace ConsoleApp
                     isValid = false;
                 }
             }
+        }
+        /// <summary>
+        /// method that checks passwords for compliance with certain rules
+        /// </summary>
+        public static void PasswordValidation()
+        {
+            bool isValid;
+            Regex symbol = new Regex(@"[!@#$%^&*()_+=<>?/,.№;:']");
+            Regex letter = new Regex(@"[\p{L}\p{Ll}\p{Lu}]");
+            Regex letterUp = new Regex(@"\p{Lu}");
+            Regex numeral = new Regex(@"[0-9]");
+            Regex space = new Regex(@"\p{Z}");
+            do
+            {
+                Console.WriteLine("Input password");
+                string password = Console.ReadLine();
+                isValid = true;
+
+                MatchCollection symbolCollections = symbol.Matches(password);
+                MatchCollection letterCollections = letter.Matches(password);
+                MatchCollection letterUpCollections = letterUp.Matches(password);
+                MatchCollection numeralCollections = numeral.Matches(password);
+                MatchCollection spaceCollections = space.Matches(password);
+
+                if (password.Length < 5 || password.Length > 10)
+                {
+                    isValid = false;
+                    Console.WriteLine("Your password cannot be less than 5 and not more than 10 characters");
+                }
+                if (symbolCollections.Count == 0)
+                {
+                    isValid = false;
+                    Console.WriteLine("Password must contain at least one special character");
+                }
+                if (letterCollections.Count == 0)
+                {
+                    isValid = false;
+                    Console.WriteLine("Password must contain at least one letter");
+                }
+                if (letterUpCollections.Count == 0)
+                {
+                    isValid = false;
+                    Console.WriteLine("Password must contain at least one uppercase letter");
+                }
+                if (numeralCollections.Count == 0)
+                {
+                    isValid = false;
+                    Console.WriteLine("Password must contain at least one digit");
+                }
+                if (spaceCollections.Count >= 1)
+                {
+                    isValid = false;
+                    Console.WriteLine("Password must not contain spaces");
+                }
+                if((symbolCollections.Count == password.Length) 
+                    || (letterCollections.Count == password.Length)
+                    || (numeralCollections.Count == password.Length))
+                    Console.WriteLine("password security level - low");
+                if((symbolCollections.Count == 2)
+                    && (letterCollections.Count == 2)
+                    && (numeralCollections.Count == 2))
+                    Console.WriteLine("password security level - medium");
+                if ((symbolCollections.Count >= 3)
+                    && (letterCollections.Count >= 3)
+                    && (numeralCollections.Count >= 3))
+                    Console.WriteLine("password security level - high");
+            }
+            while (!isValid);
+            Console.WriteLine("Your password has been successfully saved in the system !!!!");
         }
     }
 }
