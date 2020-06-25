@@ -60,6 +60,9 @@ namespace ConsoleApp
             }
             else return false;
         }
+        /// <summary>
+        /// implemented a method that displays the value to the console depending on the number entered by the user
+        /// </summary>
         static void Cheers()
         {
             Console.WriteLine("Enter your yards");
@@ -77,7 +80,7 @@ namespace ConsoleApp
             }
             else 
             {
-                Console.WriteLine("High Five!!!");
+                Console.WriteLine("High Five!");
             }
 
         }
