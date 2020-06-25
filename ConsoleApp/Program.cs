@@ -60,11 +60,36 @@ namespace ConsoleApp
             }
             else return false;
         }
+        /// <summary>
+        /// implemented a method that displays the value to the console depending on the number entered by the user
+        /// </summary>
+        static void Cheers()
+        {
+            Console.WriteLine("Enter your yards");
+            int yards = Convert.ToInt32(Console.ReadLine());
+            if (yards < 1)
+            {
+                Console.WriteLine("Shh!!!");
+            }
+            else if(yards <= 10)
+            {
+                for (int i = 1; i <= yards; i++)
+                {
+                    Console.Write("Ra!");
+                }
+            }
+            else 
+            {
+                Console.WriteLine("High Five!");
+            }
+
+        }
         static void Main()
         {
             //EvenSum();
-            PrimeSum();
-            Console.WriteLine("75group");
+            //PrimeSum();
+            Cheers();
+            Console.ReadKey();
         }
     }
 }
