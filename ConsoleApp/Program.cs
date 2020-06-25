@@ -9,7 +9,7 @@ namespace ConsoleApp
     {
         static void Main()
         {
-            PasswordValidation();
+            Cheers();
             Console.ReadKey();
         }
         /// <summary>
@@ -182,6 +182,74 @@ namespace ConsoleApp
             }
             while (!isValid);
             Console.WriteLine("Your password has been successfully saved in the system !!!!");
+        }
+        /// <summary>
+        /// depending on the entered value, actions are displayed
+        /// </summary>
+        public static void Cheers()
+        {
+            Console.WriteLine("Enter the number of yards");
+            var x = ReadTypeLine(Convert.ToInt32);
+
+            if (x > 10)
+                Console.WriteLine("High Five");
+            else if (x < 1)
+                Console.WriteLine("shh");
+            else if (x >= 1 && x <= 10)
+            {
+                for (int i = 0; i < x; i++)
+                {
+                    Console.Write("Ra!");
+                }
+            }
+        }
+        /// <summary>
+        /// The method checks if the user entered the value using the input parameter: the delegate
+        /// </summary>
+        /// <typeparam name="T">GenericType</typeparam>
+        /// <param name="convertor">conversion of the entered number to the type specified in a third-party method</param>
+        /// <returns></returns>
+        public static T ReadTypeLine<T>(Func<string, T> convertor)
+        {
+            T value = default;
+            bool isValid = false;
+            while (!isValid)
+            {
+                try
+                {
+                    value = convertor(Console.ReadLine());
+                    isValid = true;
+                }
+                catch (Exception e)
+                {
+                    isValid = false;
+                    Console.WriteLine(e.Message);
+                }
+            }
+            return value;
+        }
+        /// <summary>
+        /// The method checks the accuracy of user input
+        /// </summary>
+        /// <returns>return converted result</returns>
+        public static int CorrectFormat1()
+        {
+            int result = 0;
+            bool isValid = false;
+            while (!isValid)
+            {
+                try
+                {
+                    result = Convert.ToInt32(Console.ReadLine());
+                    isValid = true;
+                }
+                catch (Exception e)
+                {
+                    isValid = false;
+                    Console.WriteLine(e.Message);
+                }
+            }
+            return result;
         }
     }
 }
