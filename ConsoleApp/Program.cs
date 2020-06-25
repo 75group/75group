@@ -84,9 +84,25 @@ namespace ConsoleApp
             }
 
         }
+        /// <summary>
+        /// metod Fibbonacci
+        /// </summary>
         static void Fibbonacci()
         {
-            Console.WriteLine();
+            Console.WriteLine("Enter the Fibonacci Number Serial Number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            int perv = 1;
+            Console.Write("{0}", perv);
+            int vtor = 1;
+            Console.Write("{0}", vtor);
+            int fib = 0;
+            while (number >= fib)
+            {
+            fib = perv + vtor;
+            Console.Write("{0}", fib);
+            perv = vtor;
+            vtor = fib;
+            }
         }
         static void Main()
         {
