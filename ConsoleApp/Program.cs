@@ -62,14 +62,31 @@ namespace ConsoleApp
         }
         static void Cheers()
         {
-            Console.WriteLine();
+            Console.WriteLine("Enter your yards");
+            int yards = Convert.ToInt32(Console.ReadLine());
+            if (yards < 1)
+            {
+                Console.WriteLine("Shh!!!");
+            }
+            else if(yards <= 10)
+            {
+                for (int i = 1; i <= yards; i++)
+                {
+                    Console.Write("Ra!");
+                }
+            }
+            else 
+            {
+                Console.WriteLine("High Five!!!");
+            }
+
         }
         static void Main()
         {
             //EvenSum();
             //PrimeSum();
             Cheers();
-            Console.WriteLine("75group");
+            Console.ReadKey();
         }
     }
 }
