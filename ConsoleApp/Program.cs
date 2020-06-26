@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -9,8 +10,7 @@ namespace ConsoleApp
     {
         static void Main()
         {
-            Cheers();
-            Console.ReadKey();
+            
         }
         /// <summary>
         /// print gapful numbers to console from range 100 to 999
@@ -232,7 +232,8 @@ namespace ConsoleApp
         /// The method checks the accuracy of user input
         /// </summary>
         /// <returns>return converted result</returns>
-        public static int CorrectFormat1()
+        ///
+        public static int CorrectFormat()
         {
             int result = 0;
             bool isValid = false;
@@ -250,6 +251,46 @@ namespace ConsoleApp
                 }
             }
             return result;
+        }
+        /// <summary>
+        /// calculating a number that is in the series of Fibonacci numbers using recursion
+        /// </summary>
+        /// <param name="number">keyboard input number that indicates the sequence number in the Fibonacci</param>
+        /// <returns></returns>
+        public static int FibonacciRecursion(double number)
+        {
+            if (number == 0)
+                return 0;
+            else if (number == 1)
+                return 1;
+            else
+            {
+                return FibonacciRecursion(number - 1) + FibonacciRecursion(number - 2);
+            }
+        }
+        /// <summary>
+        /// When entering through the console the sequence number of the Fibonacci sequence, 
+        /// the method displays the Fibonacci number without using recursion method
+        /// </summary>
+        public static void Fibonacci()
+        {
+            Console.WriteLine("input number:");
+            var number = ReadTypeLine(Convert.ToInt32);
+            double firstNumber = 0;
+            double secondNumber = 1;
+            double sum = default;
+            if (number == 0)
+                Console.WriteLine(firstNumber);
+            if (number == 1)
+                Console.WriteLine(number);
+            else
+                for (int i = 0; i < number; i++)
+                {
+                    sum = firstNumber + secondNumber;
+                    secondNumber = firstNumber;
+                    firstNumber = sum;
+                }
+            Console.WriteLine(sum);
         }
     }
 }
