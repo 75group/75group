@@ -104,12 +104,17 @@ namespace ConsoleApp
             vtor = fib;
             }
         }
+        static void Gapful()
+        {
+            Console.WriteLine();
+        }
         static void Main()
         {
             //EvenSum();
             //PrimeSum();
             //Cheers();
-            Fibbonacci();
+            //Fibbonacci();
+            Gapful();
             Console.ReadKey();
         }
     }
