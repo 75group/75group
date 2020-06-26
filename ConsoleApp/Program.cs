@@ -10,7 +10,7 @@ namespace ConsoleApp
     {
         static void Main()
         {
-            
+
         }
         /// <summary>
         /// print gapful numbers to console from range 100 to 999
@@ -291,6 +291,13 @@ namespace ConsoleApp
                     firstNumber = sum;
                 }
             Console.WriteLine(sum);
+        }
+        /// <summary>
+        /// method comparing two integers
+        /// </summary>
+        public static bool CompareInt(int x, int y)
+        {
+            return x == y;
         }
     }
 }
