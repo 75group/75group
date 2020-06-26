@@ -104,17 +104,49 @@ namespace ConsoleApp
             vtor = fib;
             }
         }
+        /// <summary>
+        /// This method checks if the user-entered number is gapful
+        /// </summary>
         static void Gapful()
         {
-            Console.WriteLine();
+            int a = Convert.ToInt32(Console.ReadLine());
+            int firstNumber = a / 100;
+            int thirdNumber = a % 100 % 10;
+            int combineNumber = firstNumber * 10 + thirdNumber;
+            
+            if (a % combineNumber == 0)
+                Console.WriteLine("Gapful");
+            else
+            {
+                Console.WriteLine("Not Gapful");
+            }
         }
+        /// <summary>
+        /// This method displays all gapful numbers from 100 to 999.
+        /// </summary>
+        static void GapfulRunge()
+        {
+            for (int number=100; number <= 999; number++)
+            {
+                int firstNumber = number / 100;
+                int thirdNumber = number % 100 % 10;
+                int combineNumber = firstNumber * 10 + thirdNumber;
+                if (number % combineNumber == 0)
+            {
+                Console.WriteLine($"{number} is gapful number");
+            }
+            }
+            
+        }
+            
         static void Main()
         {
             //EvenSum();
             //PrimeSum();
             //Cheers();
             //Fibbonacci();
-            Gapful();
+            //Gapful();
+            GapfulRunge();
             Console.ReadKey();
         }
     }
