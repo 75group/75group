@@ -141,8 +141,8 @@ namespace ConsoleApp
         /// <summary>
         ///  method for comparing two numbers that returns true if the numbers are equal and false if not.
         /// </summary>
-        /// <param name="a"></param>
-        /// <param name="b"></param>
+        /// <param name="a">Firstinteger</param>
+        /// <param name="b">Secondinteger</param>
         /// <returns></returns>
         static bool CompareInt(int a, int b)
         {
