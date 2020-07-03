@@ -149,7 +149,14 @@ namespace ConsoleApp
         {
             return a == b;
         }
-        static void Hrt();    
+        static string Hrt(int i)
+        {
+            string result = "";
+            for (hour = 0; hour <=99; hour++)
+
+            return result;
+        }
+
         static void Main()
         {
             //EvenSum();
@@ -158,11 +165,12 @@ namespace ConsoleApp
             //Fibbonacci();
             //Gapful();
             //GapfulRunge();
-            Assert.AreEqual("00:00:00", < YourMethodName > (0));
-            Assert.AreEqual("00:00:05", < YourMethodName > (5));
-            Assert.AreEqual("00:01:00", < YourMethodName > (60));
-            Assert.AreEqual("23:59:59", < YourMethodName > (86399));
-            Assert.AreEqual("99:59:59", < YourMethodName > (359999));
+            Hrt();
+            Assert.AreEqual("00:00:00", Hrt(0));
+            Assert.AreEqual("00:00:05", Hrt (5));
+            Assert.AreEqual("00:01:00", Hrt(60));
+            Assert.AreEqual("23:59:59", Hrt(86399));
+            Assert.AreEqual("99:59:59", Hrt(359999));
             Console.WriteLine("Well done!");
             Console.ReadKey();
         }
