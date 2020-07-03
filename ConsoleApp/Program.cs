@@ -138,12 +138,15 @@ namespace ConsoleApp
             }
             
         }
-        static void CompareInt()
+        /// <summary>
+        ///  method for comparing two numbers that returns true if the numbers are equal and false if not.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        static bool CompareInt(int a, int b)
         {
-            Console.WriteLine("");
-        }
-        {
-                
+            return a == b;
         }
             
         static void Main()
@@ -154,7 +157,8 @@ namespace ConsoleApp
         //Fibbonacci();
         //Gapful();
         //GapfulRunge();
-        CompareInt();
+        bool a = CompareInt(1,1);
+            Console.WriteLine(a);
             Console.ReadKey();
         }
     }
