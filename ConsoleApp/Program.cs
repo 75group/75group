@@ -138,15 +138,27 @@ namespace ConsoleApp
             }
             
         }
+        /// <summary>
+        ///  method for comparing two numbers that returns true if the numbers are equal and false if not.
+        /// </summary>
+        /// <param name="a">Firstinteger</param>
+        /// <param name="b">Secondinteger</param>
+        /// <returns></returns>
+        static bool CompareInt(int a, int b)
+        {
+            return a == b;
+        }
             
         static void Main()
         {
-            //EvenSum();
-            //PrimeSum();
-            //Cheers();
-            //Fibbonacci();
-            //Gapful();
-            GapfulRunge();
+        //EvenSum();
+        //PrimeSum();
+        //Cheers();
+        //Fibbonacci();
+        //Gapful();
+        //GapfulRunge();
+        bool a = CompareInt(1,1);
+            Console.WriteLine(a);
             Console.ReadKey();
         }
     }
