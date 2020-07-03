@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 
 namespace ConsoleApp
 {
@@ -148,17 +149,21 @@ namespace ConsoleApp
         {
             return a == b;
         }
-            
+        static void Hrt();    
         static void Main()
         {
-        //EvenSum();
-        //PrimeSum();
-        //Cheers();
-        //Fibbonacci();
-        //Gapful();
-        //GapfulRunge();
-        bool a = CompareInt(1,1);
-            Console.WriteLine(a);
+            //EvenSum();
+            //PrimeSum();
+            //Cheers();
+            //Fibbonacci();
+            //Gapful();
+            //GapfulRunge();
+            Assert.AreEqual("00:00:00", < YourMethodName > (0));
+            Assert.AreEqual("00:00:05", < YourMethodName > (5));
+            Assert.AreEqual("00:01:00", < YourMethodName > (60));
+            Assert.AreEqual("23:59:59", < YourMethodName > (86399));
+            Assert.AreEqual("99:59:59", < YourMethodName > (359999));
+            Console.WriteLine("Well done!");
             Console.ReadKey();
         }
     }
