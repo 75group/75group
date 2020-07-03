@@ -138,15 +138,23 @@ namespace ConsoleApp
             }
             
         }
+        static void CompareInt()
+        {
+            Console.WriteLine("");
+        }
+        {
+                
+        }
             
         static void Main()
         {
-            //EvenSum();
-            //PrimeSum();
-            //Cheers();
-            //Fibbonacci();
-            //Gapful();
-            GapfulRunge();
+        //EvenSum();
+        //PrimeSum();
+        //Cheers();
+        //Fibbonacci();
+        //Gapful();
+        //GapfulRunge();
+        CompareInt();
             Console.ReadKey();
         }
     }
