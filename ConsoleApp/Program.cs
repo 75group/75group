@@ -301,6 +301,11 @@ namespace ConsoleApp
         {
             return x == y;
         }
+        /// <summary>
+        /// converting seconds to a readable time format
+        /// </summary>
+        /// <param name="x">input value (in seconds)</param>
+        /// <returns></returns>
         public static string Hrt(int x)
         {
             bool isTrue;
