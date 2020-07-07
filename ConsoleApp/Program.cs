@@ -4,13 +4,15 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
 
+using NUnit.Framework;
+
 namespace ConsoleApp
 {
     static class Program
     {
         static void Main()
         {
-
+            Hrt(81125);
         }
         /// <summary>
         /// print gapful numbers to console from range 100 to 999
@@ -298,6 +300,24 @@ namespace ConsoleApp
         public static bool CompareInt(int x, int y)
         {
             return x == y;
+        }
+        public static string Hrt(int x)
+        {
+            bool isTrue;
+            do
+            {
+                string resul;
+                isTrue = true;
+                if (x < 0)
+                {
+                    isTrue = false;
+                    Console.WriteLine("entered number cannot be less than 0");
+                }
+                resul = ($"{x/3600:00}:{(x % 3600) / 60:00}:{(x % 3600) % 60:00}");
+                Console.WriteLine(resul);
+                return resul;
+            }
+            while (!isTrue);
         }
     }
 }
