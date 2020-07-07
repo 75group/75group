@@ -149,12 +149,19 @@ namespace ConsoleApp
         {
             return a == b;
         }
-        static string Hrt(int i)
+        /// <summary>
+        /// A function that takes a non-negative integer (in seconds) as input and returns the time in a human-readable format (HH: MM: SS).
+        /// </summary>
+        /// <param name="s"> integer (seconds) as input</param>
+        /// <returns></returns>
+        static string Hrt(int s)
         {
-            string result = "";
-            for (hour = 0; hour <=99; hour++)
-
-            return result;
+            /*int hours = s / 3600;
+            int minutes = s % 3600 / 60;
+            int seconds = s % 3600 % 60;
+            string result = ($"{hours}:{minutes}:{seconds}");
+            return result;*/
+            return ($"{(s / 3600):00}:{(s % 3600 / 60):00}:{(s % 3600 % 60):00}");
         }
 
         static void Main()
@@ -165,7 +172,6 @@ namespace ConsoleApp
             //Fibbonacci();
             //Gapful();
             //GapfulRunge();
-            Hrt();
             Assert.AreEqual("00:00:00", Hrt(0));
             Assert.AreEqual("00:00:05", Hrt (5));
             Assert.AreEqual("00:01:00", Hrt(60));
