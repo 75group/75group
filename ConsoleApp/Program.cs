@@ -12,7 +12,12 @@ namespace ConsoleApp
     {
         static void Main()
         {
-            Hrt(81125);
+            Assert.AreEqual("00:00:00", Hrt (0));
+            Assert.AreEqual("00:00:05", Hrt (5));
+            Assert.AreEqual("00:01:00", Hrt (60));
+            Assert.AreEqual("23:59:59", Hrt (86399));
+            Assert.AreEqual("99:59:59", Hrt (359999));
+            Console.WriteLine("well done");
         }
         /// <summary>
         /// print gapful numbers to console from range 100 to 999
@@ -316,13 +321,20 @@ namespace ConsoleApp
                 if (x < 0)
                 {
                     isTrue = false;
-                    Console.WriteLine("entered number cannot be less than 0");
                 }
                 resul = ($"{x/3600:00}:{(x % 3600) / 60:00}:{(x % 3600) % 60:00}");
-                Console.WriteLine(resul);
                 return resul;
             }
             while (!isTrue);
+        }
+        /// <summary>
+        /// method for moving the first letter of each word to the end, then adding “ay” to the end of the word, while the punctuation marks remain untouched
+        /// </summary>
+        /// <param name="phrase">string type passed parameter</param>
+        /// <returns></returns>
+        public static string Piglatin(string phrase)
+        {
+            return string.Join(" ", phrase.Split(" ").Select(x => x.Substring(1) + x[0] + "ay"));
         }
     }
 }
