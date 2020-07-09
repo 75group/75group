@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 
 namespace ConsoleApp
 {
@@ -148,17 +149,35 @@ namespace ConsoleApp
         {
             return a == b;
         }
-            
+        /// <summary>
+        /// A function that takes a non-negative integer (in seconds) as input and returns the time in a human-readable format (HH: MM: SS).
+        /// </summary>
+        /// <param name="s"> integer (seconds) as input</param>
+        /// <returns></returns>
+        static string Hrt(int s)
+        {
+            /*int hours = s / 3600;
+            int minutes = s % 3600 / 60;
+            int seconds = s % 3600 % 60;
+            string result = ($"{hours}:{minutes}:{seconds}");
+            return result;*/
+            return ($"{(s / 3600):00}:{(s % 3600 / 60):00}:{(s % 3600 % 60):00}");
+        }
+
         static void Main()
         {
-        //EvenSum();
-        //PrimeSum();
-        //Cheers();
-        //Fibbonacci();
-        //Gapful();
-        //GapfulRunge();
-        bool a = CompareInt(1,1);
-            Console.WriteLine(a);
+            //EvenSum();
+            //PrimeSum();
+            //Cheers();
+            //Fibbonacci();
+            //Gapful();
+            //GapfulRunge();
+            Assert.AreEqual("00:00:00", Hrt(0));
+            Assert.AreEqual("00:00:05", Hrt (5));
+            Assert.AreEqual("00:01:00", Hrt(60));
+            Assert.AreEqual("23:59:59", Hrt(86399));
+            Assert.AreEqual("99:59:59", Hrt(359999));
+            Console.WriteLine("Well done!");
             Console.ReadKey();
         }
     }
