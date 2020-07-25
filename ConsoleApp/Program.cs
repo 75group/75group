@@ -12,12 +12,9 @@ namespace ConsoleApp
     {
         static void Main()
         {
-            Assert.AreEqual("00:00:00", Hrt (0));
-            Assert.AreEqual("00:00:05", Hrt (5));
-            Assert.AreEqual("00:01:00", Hrt (60));
-            Assert.AreEqual("23:59:59", Hrt (86399));
-            Assert.AreEqual("99:59:59", Hrt (359999));
-            Console.WriteLine("well done");
+            Console.WriteLine(CompareInt(811181, Squaredigit(9119)));
+            Console.WriteLine(CompareInt(9414, Squaredigit(3212)));
+            Console.WriteLine(CompareInt(4114, Squaredigit(2112)));
         }
         /// <summary>
         /// print gapful numbers to console from range 100 to 999
@@ -335,6 +332,45 @@ namespace ConsoleApp
         public static string Piglatin(string phrase)
         {
             return string.Join(" ", phrase.Split(" ").Select(x => x.Substring(1) + x[0] + "ay"));
+        }
+        /// <summary>
+        /// method that squares each digit of an entered number no input parameters
+        /// </summary>
+        public static void MySquaredigit()
+        {
+            Console.WriteLine("input number:");
+            int numb = ReadTypeLine(Convert.ToInt32);
+            string x = Convert.ToString(numb);
+            string z;
+            int q;
+            for (int i = 0; i < x.Length; i++)
+            {
+                x.Split("", x.Length);
+                z = Convert.ToString(x[i]);
+                q = int.Parse(z);
+                Console.WriteLine($"square of a number: {x[i]} = {q * q}");
+            }
+        }
+        /// <summary>
+        /// method that squares each digit of an entered number from input parameters
+        /// </summary>
+        public static int Squaredigit(int numb)
+        {
+            List<int> list = new List<int>();
+            string x = Convert.ToString(numb);
+            string w = default;
+            string z;
+            int q;
+            for (int i = 0; i < x.Length; i++)
+            {
+                x.Split("", x.Length);
+                z = Convert.ToString(x[i]);
+                q = int.Parse(z);
+                q *= q;
+                list.Add(q);
+                w = string.Concat(list);
+            }
+            return Convert.ToInt32(w);
         }
     }
 }
